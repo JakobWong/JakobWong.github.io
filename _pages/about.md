@@ -17,7 +17,8 @@ profile:
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
-cvlink:
+cv: 
+  cv_pdf: jh_cv.pdf
 ---
 
 I'm a Data Visualization Ph.D. student at Arizona State University working with [Chris Bryan](chrisbryan.github.io).
