@@ -1,7 +1,7 @@
-
+<!-- 
     <header>
 
-      <!-- Nav Bar -->
+      <!~~ Nav Bar ~~>
       <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
         <div class="container">
           {% if page.permalink != '/' -%}
@@ -21,12 +21,12 @@
             {%- endif -%}
           </a>
           {%- elsif site.enable_navbar_social -%}
-          <!-- Social Icons -->
+          <!~~ Social Icons ~~>
           <div class="navbar-brand social">
             {% include social.html %}
           </div>
           {% endif %}
-          <!-- Navbar Toggle -->
+          <!~~ Navbar Toggle ~~>
           <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar top-bar"></span>
@@ -43,7 +43,7 @@
                 {% endif %}
               {% endfor %}
 
-              <!-- About -->
+              <!~~ About ~~>
               <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/' | relative_url }}">{{ about_title }}
                   {%- if page.permalink == '/' -%}
@@ -52,7 +52,7 @@
                 </a>
               </li>
               {% if site.blog_nav_title %}
-              <!-- Blog -->
+              <!~~ Blog ~~>
               <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/blog/' | relative_url }}">{{ site.blog_nav_title }}
                   {%- if page.url contains 'blog' -%}
@@ -62,7 +62,7 @@
               </li>
               {%- endif %}
 
-              <!-- Other pages -->
+              <!~~ Other pages ~~>
               {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
               {%- for p in sorted_pages -%}
               {%- if p.nav and p.autogen == nil -%}
@@ -96,7 +96,7 @@
               {% endfor -%}
               {%- if site.enable_darkmode %}
 
-              <!-- Toogle theme mode -->
+              <!~~ Toogle theme mode ~~>
               <li class="toggle-container">
                 <button id="light-toggle" title="Change theme">
                   <i class="fas fa-moon"></i>
@@ -109,11 +109,11 @@
         </div>
       </nav>
 {% if site.enable_progressbar %}
-      <!-- Scrolling Progress Bar -->
+      <!~~ Scrolling Progress Bar ~~>
       <progress id="progress" value="0">
         <div class="progress-container">
           <span class="progress-bar"></span>
         </div>
       </progress>
 {%- endif %}
-    </header>
+    </header> -->
