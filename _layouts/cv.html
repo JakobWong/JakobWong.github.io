@@ -6,15 +6,23 @@ layout: default
 
           <header class="post-header">
             <h1 class="post-title">{{ page.title }} {% if page.cv_pdf %}<a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" target="_blank" rel="noopener noreferrer" class="float-right"><i class="fas fa-file-pdf"></i></a>{% endif %}</h1>
+<<<<<<< HEAD
             <!-- <p class="post-description">{{ page.description }}</p> -->
+=======
+            <p class="post-description">{{ page.description }}</p>
+>>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
           </header>
 
           <article>
             <div class="cv">
               {% for entry in site.data.cv %}
+<<<<<<< HEAD
                 <!-- <div class="shadow-none border-0 card mt-3 p-3"> -->
                 <div class="shadow-none border-0 card">
 
+=======
+                <div class="card mt-3 p-3">
+>>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
                   <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
                   <div>
                   {% if entry.type == "list" %}

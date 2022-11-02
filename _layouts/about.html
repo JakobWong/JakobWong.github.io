@@ -6,7 +6,11 @@ layout: default
       <div class="post">
         <header class="post-header">
           <h1 class="post-title">
+<<<<<<< HEAD
            {% if site.title == "blank" -%}<span class="font-weight-bold">Hi, I'm {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }} </span> {%- else -%}{{ site.title }}{%- endif %}
+=======
+           {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
+>>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
           </h1>
           <p class="desc">{{ page.subtitle }}</p>
         </header>
@@ -41,6 +45,7 @@ layout: default
                 <div class="contact-icons">
                 {% include social.html %}
                 </div>
+<<<<<<< HEAD
               </div>
             {%- endif %}
 
@@ -51,6 +56,13 @@ layout: default
                   <a class="btn-outline-secondary btn" href="{{ page.cv.cv_pdf | prepend: 'assets/pdf/' | relative_url}}">Here's my CV</a>
                 </div>
               {%- endif %}
+=======
+
+                <!-- <div class="contact-note">
+                  {{ site.contact_note }}
+                </div> -->
+              </div>
+>>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
             {%- endif %}
           </div>
           {%- endif %}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # - title: General Information
 #   type: map
 #   contents:
@@ -9,12 +10,29 @@
 #       # value: English, 
 
 # - title: Jinbin Huang 
+=======
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Jinbin Huang
+    # - name: Date of Birth
+      # value: 14th March 1879
+    - name: Languages
+      value: English, German
+
+>>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
 - title: Education
   type: time_table
   contents:
     - title: PhD
+<<<<<<< HEAD
       institution: Arizona State University, Tempe, AZ, USA
       year: 2019 - present
+=======
+      institution: University of Zurich, Zurich, Switzerland
+      year: 1905
+>>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
       description:
         - Description 1.
         - Description 2.
