@@ -3,16 +3,10 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-<<<<<<< HEAD
 full_name: Jinbin Huang
 first_name: Jinbin
 middle_name: 
 last_name: Huang
-=======
-first_name: Hi, I'm Jinbin Huang
-middle_name: 
-last_name: 
->>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
 email: jhuan196@asu.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -101,13 +95,8 @@ instagram_id: # your instagram id
 facebook_id: # your facebook id
 discord_id: # your discord id (18-digit unique numerical identifier)
 
-<<<<<<< HEAD
 # contact_note: >
 #   You can even add a little note about which of these is the best way to reach you.
-=======
-contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
->>>>>>> parent of 3dc2255 (Merge pull request #2 from JakobWong/gh-pages)
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
