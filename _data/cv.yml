@@ -1,19 +1,20 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Jinbin Huang
-    # - name: Date of Birth
-      # value: 14th March 1879
-    - name: Languages
-      value: English, German
+# - title: General Information
+#   type: map
+#   contents:
+#     - name: Full Name
+#       value: Jinbin Huang
+#     # - name: Date of Birth
+#       # value: 14th March 1879
+#     # - name: Languages
+#       # value: English, 
 
+# - title: Jinbin Huang 
 - title: Education
   type: time_table
   contents:
     - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+      institution: Arizona State University, Tempe, AZ, USA
+      year: 2019 - present
       description:
         - Description 1.
         - Description 2.

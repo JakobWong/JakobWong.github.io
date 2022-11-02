@@ -3,9 +3,10 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Hi, I'm Jinbin Huang
+full_name: Jinbin Huang
+first_name: Jinbin
 middle_name: 
-last_name: 
+last_name: Huang
 email: jhuan196@asu.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -94,8 +95,8 @@ instagram_id: # your instagram id
 facebook_id: # your facebook id
 discord_id: # your discord id (18-digit unique numerical identifier)
 
-contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+# contact_note: >
+#   You can even add a little note about which of these is the best way to reach you.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
