@@ -1,0 +1,224 @@
+---
+layout: default
+---
+
+<!-- Modern Hero Section -->
+<link rel="stylesheet" href="{{ '/assets/css/hero-modern.css' | relative_url }}">
+
+<section class="hero-modern">
+  <!-- Animated Background -->
+  <div class="hero-background">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="heroParticlesCanvas" class="hero-particles"></canvas>
+
+  <!-- 3D Center Element -->
+  <div id="hero3DContainer" class="hero-3d-container"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <!-- Main Heading -->
+    <h1 class="hero-title">
+      {% if site.title == "blank" -%}
+        Hi, I'm <span>{{ site.first_name }}</span> {{ site.last_name }}
+      {%- else -%}
+        {{ site.title }}
+      {%- endif %}
+    </h1>
+
+    <!-- Role/Subtitle -->
+    <h2 class="hero-subtitle">
+      <span>AI Researcher</span> × <span>ML Engineer</span> × <span>System Builder</span>
+    </h2>
+
+    <!-- Description -->
+    <p class="hero-description">
+      PhD Student @ HKUST | Deep Learning, NLP, Computer Vision<br>
+      Previously: Intel (ML Optimization), USC ICT (Multimodal AI)
+    </p>
+
+    <!-- Call to Action Buttons -->
+    <div class="hero-cta">
+      <a href="#research" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Explore Research
+      </a>
+      <a href="{{ page.cv.cv_pdf | prepend: 'assets/pdf/' | relative_url }}" class="btn-secondary" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 16v1a2 2 0 002 2h8a2 2 0 002-2v-1M12 11l-2 2m0 0l-2-2m2 2V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download CV
+      </a>
+    </div>
+
+    <!-- Tech Stack Pills -->
+    <div class="tech-pills">
+      <div class="tech-pill">
+        <div class="tech-pill-icon"></div>
+        PyTorch
+      </div>
+      <div class="tech-pill">
+        <div class="tech-pill-icon"></div>
+        TensorFlow
+      </div>
+      <div class="tech-pill">
+        <div class="tech-pill-icon"></div>
+        LLM Agents
+      </div>
+      <div class="tech-pill">
+        <div class="tech-pill-icon"></div>
+        Computer Vision
+      </div>
+      <div class="tech-pill">
+        <div class="tech-pill-icon"></div>
+        MLOps
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- Load JavaScript -->
+<script src="{{ '/assets/js/hero-particles.js' | relative_url }}"></script>
+
+<!-- Research Narrative Section -->
+<section id="research" style="position: relative; background: linear-gradient(180deg, #0A1929 0%, #1c1c1d 100%); padding: 4rem 1rem;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <!-- Section Header -->
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: #F8F9FA; margin-bottom: 1rem;">
+        Research Focus
+      </h2>
+      <p style="font-size: 1.125rem; color: rgba(248, 249, 250, 0.7); max-width: 600px; margin: 0 auto;">
+        Building intelligent systems that bridge the gap between research and production
+      </p>
+    </div>
+
+    <!-- Research Areas Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+
+      <!-- Card 1: LLM Agents -->
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 212, 255, 0.2)'; this.style.borderColor='rgba(0, 212, 255, 0.5)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D4FF, #B026FF); border-radius: 12px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 600; color: #F8F9FA; margin-bottom: 0.5rem;">LLM Agents</h3>
+        <p style="font-size: 0.9375rem; color: rgba(248, 249, 250, 0.7); line-height: 1.6;">
+          Building intelligent agents that can reason, plan, and interact with complex environments
+        </p>
+      </div>
+
+      <!-- Card 2: Computer Vision -->
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 212, 255, 0.2)'; this.style.borderColor='rgba(0, 212, 255, 0.5)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D4FF, #B026FF); border-radius: 12px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="white" stroke-width="2"/>
+            <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 600; color: #F8F9FA; margin-bottom: 0.5rem;">Computer Vision</h3>
+        <p style="font-size: 0.9375rem; color: rgba(248, 249, 250, 0.7); line-height: 1.6;">
+          Teaching machines to see and understand visual information with deep neural networks
+        </p>
+      </div>
+
+      <!-- Card 3: Multimodal AI -->
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 212, 255, 0.2)'; this.style.borderColor='rgba(0, 212, 255, 0.5)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D4FF, #B026FF); border-radius: 12px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 600; color: #F8F9FA; margin-bottom: 0.5rem;">Multimodal AI</h3>
+        <p style="font-size: 0.9375rem; color: rgba(248, 249, 250, 0.7); line-height: 1.6;">
+          Bridging visual and language understanding for richer AI interactions
+        </p>
+      </div>
+
+      <!-- Card 4: ML Systems -->
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 212, 255, 0.2)'; this.style.borderColor='rgba(0, 212, 255, 0.5)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D4FF, #B026FF); border-radius: 12px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 600; color: #F8F9FA; margin-bottom: 0.5rem;">ML Systems</h3>
+        <p style="font-size: 0.9375rem; color: rgba(248, 249, 250, 0.7); line-height: 1.6;">
+          Optimizing AI at scale - from training to deployment in production environments
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Original About Content -->
+<div style="background: var(--global-bg-color); padding: 3rem 1rem;">
+  <div class="container">
+    <div class="post">
+      <article>
+        {% if page.profile -%}
+        <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
+          {%- if page.profile.image %}
+            {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+
+            {% if page.profile.image_circular %}
+              {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
+            {% else %}
+              {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
+            {% endif %}
+
+            {% include figure.html
+            path=profile_image_path
+            class=profile_image_class
+            alt=page.profile.image -%}
+          {% endif -%}
+
+          {%- if page.social %}
+            <!-- Social -->
+            <div class="social">
+              <div class="contact-icons">
+              {% include social.html %}
+              </div>
+            </div>
+          {%- endif %}
+        </div>
+        {%- endif %}
+
+        <div class="clearfix">
+          {{ content }}
+        </div>
+
+        {% if page.news -%}
+        <!-- News -->
+        {%- include news.html %}
+        {%- endif %}
+        {% if page.selected_papers -%}
+          <!-- Selected papers -->
+          {%- include selected_papers.html %}
+        {%- endif %}
+      </article>
+    </div>
+  </div>
+</div>

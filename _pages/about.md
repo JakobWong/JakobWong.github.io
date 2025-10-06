@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: about_modern
 title: about
 permalink: /
 # subtitle: I'm a PhD student at Arizona State University
@@ -17,16 +17,15 @@ profile:
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
-cv: 
+cv:
   cv_pdf: jh_cv.pdf
 ---
 
-I'm a Data Visualization Ph.D. student at Arizona State University working with [Chris Bryan](chrisbryan.github.io).
+I'm a PhD student at **HKUST** focusing on **Deep Learning, NLP, and Computer Vision**. My research bridges the gap between cutting-edge AI research and real-world production systems.
 
-My research focuses on designing and developing interfaces to help **non-experts** understanding machine learning models, especially **deep neural networks**. I also apply **immersive technologies** to enhance sense-making in **data analytics**.
+My work spans **LLM agents**, **multimodal perception**, and **ML system optimization**. I'm passionate about building intelligent systems that can reason, learn, and adapt in complex environments.
 
-I have collaborated with physicians, developers, designers and scientists from <img src="assets/img/pch-logo.png" style="padding: 0px 5px 0px 5px" height="15"> Phoenix Children's Hospital,
-<img src="assets/img/oppo-logo.png" style="padding: 0px 5px 0px 5px" height="15"> OPPO U.S. Research Center, <img src="assets/img/bosch-logo.svg" style="padding: 0px 5px 0px 5px" height="15">   BOSCH USA and <img src="assets/img/ibm-logo.png" style="padding: 0px 5px 0px 5px" height="15"> IBM.
+Previously, I worked at **Intel** on ML model optimization and at **USC Institute for Creative Technologies** on multimodal AI systems. I hold a Master's degree from USC with focus on Machine Learning and Computer Vision.
 
 <!-- 
 
