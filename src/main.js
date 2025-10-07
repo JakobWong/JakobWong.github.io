@@ -41,7 +41,7 @@ class AuroraBackground {
         uniform float iTime;
         uniform vec2 iResolution;
 
-        #define NUM_OCTAVES 5
+        #define NUM_OCTAVES 3
 
         float rand(vec2 n) {
           return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
@@ -79,9 +79,9 @@ class AuroraBackground {
           float t = iTime * 0.2;
           vec3 color = vec3(0.0);
 
-          // Sci-fi energy flows - more layers for richness
-          for(float i = 0.0; i < 12.0; i++) {
-            float layer = i / 12.0;
+          // Sci-fi energy flows - reduced layers for performance
+          for(float i = 0.0; i < 6.0; i++) {
+            float layer = i / 6.0;
 
             // Complex wave motion with turbulence
             vec2 wave = vec2(
@@ -94,9 +94,8 @@ class AuroraBackground {
             mat2 rotation = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
             vec2 pos = rotation * (p + wave);
 
-            // Turbulent energy flow
+            // Simplified energy flow - single fbm call
             float n = fbm(pos * 2.0 + vec2(t * 0.5, -t * 0.3));
-            n += fbm(pos * 4.0 - vec2(t * 0.3, t * 0.6)) * 0.5;
             n += sin(pos.x * 10.0 + t * 2.0) * 0.1;
 
             // Vibrant sci-fi color palette
@@ -139,17 +138,17 @@ class AuroraBackground {
             // Vignette effect
             stream *= (1.0 - length(uv * vec2(1.3, 1.0))) * 0.9;
 
-            color += energyColor * stream * 0.12;
+            color += energyColor * stream * 0.18;
           }
 
-          // Add subtle particle field
+          // Add subtle particle field - reduced count
           vec2 particleUV = p * 6.0;
           float particles = 0.0;
-          for(float j = 0.0; j < 5.0; j++) {
+          for(float j = 0.0; j < 3.0; j++) {
             vec2 offset = vec2(sin(j * 2.4 + t * 0.5), cos(j * 1.7 + t * 0.3)) * 3.0;
             vec2 particlePos = particleUV + offset;
             float dist = length(fract(particlePos) - 0.5);
-            particles += smoothstep(0.08, 0.0, dist) * 0.2;
+            particles += smoothstep(0.08, 0.0, dist) * 0.3;
           }
           color += vec3(0.5, 0.7, 1.0) * particles * 0.08;
 
