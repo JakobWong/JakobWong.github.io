@@ -76,53 +76,95 @@ class AuroraBackground {
           vec2 uv = (gl_FragCoord.xy - 0.5 * iResolution.xy) / iResolution.y;
           vec2 p = uv * 2.0;
 
-          float t = iTime * 0.15;
+          float t = iTime * 0.2;
           vec3 color = vec3(0.0);
 
-          // Multiple layers of flowing aurora
-          for(float i = 0.0; i < 8.0; i++) {
-            float layer = i / 8.0;
+          // Sci-fi energy flows - more layers for richness
+          for(float i = 0.0; i < 12.0; i++) {
+            float layer = i / 12.0;
 
-            // Wave motion
+            // Complex wave motion with turbulence
             vec2 wave = vec2(
-              sin(p.y * 3.0 + t + i * 0.5) * 0.3,
-              cos(p.x * 2.0 + t * 0.8 + i * 0.3) * 0.2
+              sin(p.y * 4.0 + t + i * 0.8) * 0.4,
+              cos(p.x * 3.0 + t * 1.2 + i * 0.6) * 0.3
             );
 
-            vec2 pos = p + wave;
+            // Add rotation
+            float angle = t * 0.1 + layer * 6.28;
+            mat2 rotation = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+            vec2 pos = rotation * (p + wave);
 
-            // Flowing noise
-            float n = fbm(pos * 1.5 + vec2(t * 0.3, -t * 0.2));
-            n += fbm(pos * 3.0 - vec2(t * 0.2, t * 0.4)) * 0.5;
+            // Turbulent energy flow
+            float n = fbm(pos * 2.0 + vec2(t * 0.5, -t * 0.3));
+            n += fbm(pos * 4.0 - vec2(t * 0.3, t * 0.6)) * 0.5;
+            n += sin(pos.x * 10.0 + t * 2.0) * 0.1;
 
-            // Elegant color palette - purple, blue, pink gradient
-            vec3 auroraColor = mix(
-              vec3(0.4, 0.2, 0.8),  // Deep purple
-              vec3(0.8, 0.3, 0.6),  // Rose pink
-              layer
-            );
+            // Vibrant sci-fi color palette
+            vec3 energyColor;
 
-            auroraColor = mix(
-              auroraColor,
-              vec3(0.2, 0.5, 0.9),  // Soft blue
-              sin(layer * 3.14159 + t) * 0.5 + 0.5
-            );
+            if(layer < 0.33) {
+              // Cyan to electric blue
+              energyColor = mix(
+                vec3(0.0, 0.8, 1.0),   // Bright cyan
+                vec3(0.2, 0.4, 1.0),   // Electric blue
+                layer * 3.0
+              );
+            } else if(layer < 0.66) {
+              // Purple to magenta
+              energyColor = mix(
+                vec3(0.6, 0.2, 1.0),   // Vivid purple
+                vec3(1.0, 0.2, 0.8),   // Hot magenta
+                (layer - 0.33) * 3.0
+              );
+            } else {
+              // Orange to pink
+              energyColor = mix(
+                vec3(1.0, 0.4, 0.2),   // Bright orange
+                vec3(1.0, 0.3, 0.6),   // Hot pink
+                (layer - 0.66) * 3.0
+              );
+            }
 
-            // Create flowing bands
-            float band = smoothstep(0.3, 0.7, n);
-            band *= smoothstep(0.0, 0.2, n);
-            band *= (1.0 - length(uv * vec2(1.5, 1.0))) * 0.8;
+            // Add pulsing energy
+            energyColor *= 1.0 + sin(t * 1.5 + layer * 6.28) * 0.3;
 
-            color += auroraColor * band * 0.15;
+            // Create flowing energy streams
+            float stream = smoothstep(0.35, 0.75, n);
+            stream *= smoothstep(0.0, 0.25, n);
+
+            // Add sharp highlights for sci-fi feel
+            float highlight = smoothstep(0.7, 0.9, n) * 0.5;
+            stream += highlight;
+
+            // Vignette effect
+            stream *= (1.0 - length(uv * vec2(1.3, 1.0))) * 0.9;
+
+            color += energyColor * stream * 0.12;
           }
 
-          // Add subtle glow
-          float glow = 1.0 - length(uv * vec2(0.8, 1.2));
-          glow = pow(glow, 3.0) * 0.1;
-          color += vec3(0.3, 0.4, 0.8) * glow;
+          // Add subtle particle field
+          vec2 particleUV = p * 6.0;
+          float particles = 0.0;
+          for(float j = 0.0; j < 5.0; j++) {
+            vec2 offset = vec2(sin(j * 2.4 + t * 0.5), cos(j * 1.7 + t * 0.3)) * 3.0;
+            vec2 particlePos = particleUV + offset;
+            float dist = length(fract(particlePos) - 0.5);
+            particles += smoothstep(0.08, 0.0, dist) * 0.2;
+          }
+          color += vec3(0.5, 0.7, 1.0) * particles * 0.08;
 
-          // Soft gamma correction
-          color = pow(color, vec3(1.2));
+          // Intense central glow
+          float glow = 1.0 - length(uv * vec2(0.7, 1.0));
+          glow = pow(glow, 2.0) * 0.2;
+          color += vec3(0.4, 0.6, 1.0) * glow;
+
+          // Add energy pulses
+          float pulse = sin(t * 2.0) * 0.5 + 0.5;
+          color += vec3(0.3, 0.5, 0.9) * pulse * 0.05;
+
+          // Enhance contrast and saturation for sci-fi look
+          color = pow(color, vec3(0.9));
+          color *= 1.3;
 
           gl_FragColor = vec4(color, 1.0);
         }
