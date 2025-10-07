@@ -356,6 +356,134 @@ main {
 }
 
 /* ===================================
+   Experience Section
+   =================================== */
+
+.experience {
+  padding: 8rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 0 3px var(--glass-bg),
+    0 0 10px rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+.timeline-content {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(8px);
+  border-color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.timeline-content h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.experience-date {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+/* ===================================
    Featured Research
    =================================== */
 
@@ -692,6 +820,24 @@ main {
 
   .projects {
     padding: 6rem 1.5rem;
+  }
+
+  .experience {
+    padding: 6rem 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -1.5rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .stats {
