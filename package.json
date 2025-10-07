@@ -1,0 +1,19 @@
+{
+  "name": "jinbin-huang-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Modern AI Researcher Portfolio - Jinbin Huang",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "author": "Jinbin Huang",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.180.0"
+  }
+}
