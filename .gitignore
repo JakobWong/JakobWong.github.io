@@ -3,7 +3,6 @@ dist/
 node_modules/
 
 # Dependencies
-package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
